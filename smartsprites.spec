@@ -4,7 +4,7 @@
 Summary:	Smart Sprites - CSS Sprite Generator Done Right
 Name:		smartsprites
 Version:	0.2.8
-Release:	0.1
+Release:	0.2
 License:	BSD
 Group:		Development/Languages/Java
 Source0:	http://csssprites.org/download/%{name}-%{version}.zip
@@ -45,8 +45,9 @@ cp -p lib/%{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}
 ln -s %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
 
 # TODO
-cp -p lib/commons-math-*.jar $RPM_BUILD_ROOT%{_javadir}
-cp -p lib/google-collections-*.jar $RPM_BUILD_ROOT%{_javadir}
+cp -p lib/commons-math-*.jar $RPM_BUILD_ROOT%{_javadir}/commons-math.jar
+cp -p lib/google-collections-*.jar $RPM_BUILD_ROOT%{_javadir}/google-collections.jar
+cp -p lib/args4j*.jar $RPM_BUILD_ROOT%{_javadir}/args4j.jar
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -58,5 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_javadir}/%{name}.jar
 %{_javadir}/%{name}-%{version}.jar
 
-%{_javadir}/commons-math-*.jar
-%{_javadir}/google-collections-*.jar
+# FIXME
+%{_javadir}/commons-math.jar
+%{_javadir}/google-collections.jar
+%{_javadir}/args4j.jar
