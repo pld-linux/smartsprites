@@ -1,6 +1,5 @@
 # TODO
 # - full system jars
-%include	/usr/lib/rpm/macros.java
 Summary:	Smart Sprites - CSS Sprite Generator Done Right
 Name:		smartsprites
 Version:	0.2.8
